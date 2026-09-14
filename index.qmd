@@ -1,4 +1,5 @@
 # Baseball
 
-This site explores the history of Major League Baseball through its data.
-Using the Lahman database, we investigate the players, teams, and stories that have shaped the game.
+This site explores the history of Major League Baseball through the Lahman database. Looking at home runs per team-game reveals a steadier story than raw totals alone: shortened seasons may look unusual at first, but their rates put them in the context of the broader history of the game.
+
+We also identify baseball's career home-run leaders and take a closer look at Barry Bonds's season-by-season record. Visit the **Home runs** and **Sluggers** pages from the navbar to explore the analysis.
