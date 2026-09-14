@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Baseball",
+    "section": "",
+    "text": "Baseball\nThis site explores the history of Major League Baseball through the Lahman database. Looking at home runs per team-game reveals a steadier story than raw totals alone: shortened seasons may look unusual at first, but their rates put them in the context of the broader history of the game.\nWe also identify baseball’s career home-run leaders and take a closer look at Barry Bonds’s season-by-season record. Visit the Home runs and Sluggers pages from the navbar to explore the analysis."
+  },
+  {
+    "objectID": "sluggers.html",
+    "href": "sluggers.html",
+    "title": "Sluggers",
+    "section": "",
+    "text": "Sluggers"
+  },
+  {
+    "objectID": "home-runs.html",
+    "href": "home-runs.html",
+    "title": "Home runs",
+    "section": "",
+    "text": "Home runs\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\n# A tibble: 4 × 4\n  yearID total_home_runs total_team_games home_runs_per_game\n   &lt;int&gt;           &lt;int&gt;            &lt;int&gt;              &lt;dbl&gt;\n1   2019            6776             4858               1.39\n2   1981            1781             2788               0.64\n3   1994            3306             3200               1.03\n4   2020            2304             1796               1.28"
+  }
+]
