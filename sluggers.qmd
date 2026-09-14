@@ -1,0 +1,61 @@
+# Sluggers
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(Lahman)
+
+leaders <- Batting |>
+	group_by(playerID) |>
+	summarize(
+		career_home_runs = sum(HR),
+		first_year = min(yearID),
+		last_year = max(yearID),
+		.groups = "drop"
+	) |>
+	inner_join(
+		People |>
+			select(playerID, nameFirst, nameLast),
+		by = "playerID"
+	) |>
+	mutate(
+		player = str_c(nameFirst, nameLast, sep = " "),
+		steroid_era = if_else(
+			last_year >= 1994 & first_year <= 2009,
+			"Career overlaps steroid era",
+			"Career does not overlap steroid era"
+		)
+	) |>
+	arrange(desc(career_home_runs)) |>
+	slice_head(n = 15) |>
+	select(player, career_home_runs, steroid_era)
+
+ggplot(
+	leaders,
+	aes(
+		x = career_home_runs,
+		y = fct_reorder(player, career_home_runs),
+		fill = steroid_era
+	)
+) +
+	geom_col() +
+	labs(
+		title = "Career home run leaders and the steroid era",
+		x = "Career home runs",
+		y = "Player",
+		fill = "Career overlap",
+		caption = "Source: Lahman Baseball Database"
+	)
+
+Batting |>
+	filter(playerID == "bondsba01") |>
+	ggplot(aes(x = yearID, y = HR)) +
+	geom_col(fill = "steelblue") +
+	labs(
+		title = "Barry Bonds: home runs by season",
+		x = "Season",
+		y = "Home runs",
+		caption = "Source: Lahman Baseball Database"
+	)
+```
